@@ -1,20 +1,26 @@
 const Engineer = require('../lib/Engineer')
 const Employee = require('../lib/Employee')
 
-test("It should return Github property", () => {
-    const testExample = "Stev222";
-    const eng = new Engineer("Steve", 5735, "stevie@test.com", testExample );
-    expect(eng.getGithub()).toBe(testExample);
+test("it should instantiate the class of Engineer", () => {
+    const testExample = "Engineer";
+    const eng = new Engineer("Steve", 5735, "stevie@test.com", "Steve222", testExample);
+    expect(eng.getRole()).toBe(testExample);
 })
 
-test("It should instantiate the class of Engineer", () => {
+test("it should retun the github property", () => {
     const testExample = "Stev222";
-    const eng = new Engineer("Steve", 5735, "stevie@test.com", testExample );
+    const eng = new Engineer("Steve", 5735, "stevie@test.com", testExample, "Engineer");
     expect(eng.github).toBe(testExample);
+})
+
+test("it should return Github username", () => {
+    const testExample = "Stev222";
+    const eng = new Engineer("Steve", 5735, "stevie@test.com", testExample, "Engineer");
+    expect(eng.getGithub()).toBe(testExample);
 })
 
 test("getRole() should return role of 'Engineer' ", () => {
     const testExample = "Engineer";
-    const role = new Engineer("Steve", 5735, "stevie@test.com", testExample );
+    const role = new Engineer("Steve", 5735, "stevie@test.com", "Steve222", testExample);
     expect(role.getRole()).toBe(testExample);
 })
