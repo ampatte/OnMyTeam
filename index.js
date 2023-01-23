@@ -60,32 +60,37 @@ const questions = [
     {
         type: 'input',
         name: 'name',
-        message: 'What is your name?',
+        message: 'What is the employee name?',
       },
       {
         type: 'input',
         name: 'ID',
-        message: 'What is your ID number?',
+        message: 'What is the employee ID number?',
       },
       {
         type: 'input',
         name: 'email',
-        message: 'What is your email address?',
+        message: 'What is the employee email address?',
       },
       {
         type: 'input',
         name: 'phone',
-        message: 'What is your office number?',
+        message: 'What is the office number?',
+      },
+      {
+        type: 'list',
+        name: ['Engineer','Intern', 'Finish'],
+        message: 'What type of employee would you like to add?',
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Enter your GitHub Username',
+        message: 'Enter the GitHub Username',
       },
       {
         type: 'input',
         name: 'school',
-        message: 'Enter your school name.',
+        message: 'Enter the school name.',
       },
 ]
 
