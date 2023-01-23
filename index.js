@@ -1,7 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const Intern = require('../lib/intern')
+const Engineer = require('../lib/engineer')
+const Manager = require('../lib/manager');
+const Employee = require('../lib/employee');
 
 const generateHTML = ({name, ID, email, github})
+
 `<!DOCTYPE html>
 <html lang="en">
 <head>
