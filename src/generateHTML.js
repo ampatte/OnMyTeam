@@ -1,3 +1,6 @@
+function generateHTML(input) {
+    return (input)
+  
 `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,32 +15,32 @@
         <div class="row">
             
             <div class=" card manager">
-                <h1 class="display-4">${name}</h1>
+                <h1 class="display-4">${ new Manager(input.name)}</h1>
                     <p class="lead">${Manager}.</p>
                         <ul class="list-group">
-                            <li class="list-group-item">ID # ${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                    <li class="list-group-item">Office: ${office}</li>
+                            <li class="list-group-item">ID # ${new Manager(input.idNum)}</li>
+                        <li class="list-group-item">Email: ${new Manager(input.email)}</li>
+                    <li class="list-group-item">Office: ${new Manager(input.office)}</li>
                 </ul>
             </div>
 
             <div class=" card engineer">
-                <h1 class="display-4">${name}</h1>
+                <h1 class="display-4">${new Engineer(input.idNum)}</h1>
                     <p class="lead">${Engineer}.</p>
                         <ul class="list-group">
-                            <li class="list-group-item">ID # ${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                    <li class="list-group-item">My GitHub username is ${github}</li>
+                            <li class="list-group-item">ID # ${new Engineer(input.idNum)}</li>
+                        <li class="list-group-item">Email: ${new Engineer(input.email)}</li>
+                    <li class="list-group-item">My GitHub username is ${new Engineer(input.github)}</li>
                 </ul>
             </div>
 
             <div class=" card intern">
-                <h1 class="display-4">${name}</h1>
+                <h1 class="display-4">${new Intern(input.name)}</h1>
                     <p class="lead">${Intern}.</p>
                         <ul class="list-group">
-                            <li class="list-group-item">${id}</li>
-                        <li class="list-group-item">Email: ${email}</li>
-                    <li class="list-group-item">School: ${school}</li>
+                            <li class="list-group-item">${new Intern(input.idNum)}</li>
+                        <li class="list-group-item">Email: ${new Manager(input.email)}</li>
+                    <li class="list-group-item">School: ${new Intern(input.school)}</li>
                 </ul>
             </div>
 
@@ -45,3 +48,4 @@
     </div>
 </body>
 </html>`
+}

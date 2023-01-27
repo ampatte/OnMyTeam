@@ -1,30 +1,32 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
-const Intern = require('../lib/intern')
-const Engineer = require('../lib/engineer')
-const Manager = require('../lib/manager');
-const Employee = require('../lib/employee');
-
+const Intern = require('./lib/Intern')
+const Engineer = require('./lib/Engineer')
+const Manager = require('./lib/Manager');
+const generateHTML = require('./src/generateHTML');
+//const path = require("path");
+//const outputDir = path.resolve(dirname, "dist");
+//const outputPath = path.join(outputDir, "team.html"); 
 const team =[];
 
-const generateHTML = ({name, ID, email, github})
 
-const Manager= [
+
+const managerInfo = [
     {
         type: 'input',
         name: 'name',
-        message: 'What is the team member name?',
+        message: 'What is the manager name?',
       },
       {
         type: 'input',
         name: 'idNum',
-        message: 'What is the team member ID number?',
+        message: 'What is the manager ID number?',
       },
       {
         type: 'input',
         name: 'email',
-        message: 'What is the team member email address?',
+        message: 'What is the manager email address?',
       },
       {
         type: 'input',
@@ -33,44 +35,50 @@ const Manager= [
       }, 
     ]
 
-const Engineer= [
+const engineerInfo = [
     {
         type: 'input',
         name: 'name',
-        message: 'What is the team member name?',
+        message: 'What is the engineer name?',
+                
       },
       {
         type: 'input',
-        name: 'idNum',
-        message: 'What is the team member ID number?',
+        name: 'idNum', 
+        message: 'What is the engineer ID number?',
+               
       },
       {
         type: 'input',
         name: 'email',
-        message: 'What is the team member email address?',
+        message: 'What is the engineer email address?',
+                
       }, 
       {
         type: 'input',
         name: 'github',
-        message: 'Enter the GitHub Username',
+        message: 'Enter the engineer GitHub Username',
+        
       },   
     ]
 
-const Intern= [
+const internInfo = [
    {
        type: 'input',
        name: 'name',
-       message: 'What is the team member name?',
+       message: 'What is the intern name?',
+       
      },
      {
        type: 'input',
        name: 'idNum',
-       message: 'What is the team member ID number?',
+       message: 'What is the intern ID number?',
+       
      },
      {
        type: 'input',
        name: 'email',
-       message: 'What is the team member email address?',
+       message: 'What is the intern email address?',
      },
      {
        type: 'input',
@@ -78,45 +86,72 @@ const Intern= [
        message: 'Enter the school name.',
      },
     ]
-const Menu = 
+
+const menu = [
     {
         type: 'list',
-        name: ['Engineer','Intern', 'Finish'],
-        message: 'What team member role would you like to add?',
-      },
+        name: 'employee',
+        message: 'What employee role would you like to add?',
+        choices: ['Engineer','Intern', 'none'],
+        },
+    ]
 
-    .then((userInput) => {
-        
-    console.log(userInput)
-            
-    const htmlContent = generateHTML(userInput)
 
-        fs.writeFile('index.html', htmlContent,(err)=>
-           err ?console.log(err) : console.log('index.html Completed!')
-       )
-})
-function init() {
-    return inquirer.prompt(Manager)
+
+function manager() {
+    return inquirer.prompt(managerInfo)
      .then((input) => {
         const manager = new Manager(input.name, input.idNum, input.email, input.office);
         team.push(manager);
-         console.log(input);
-         Menu();
-     });
+         console.log(input) 
+         runMenu();
+    });
+}
 
-     return inquirer.prompt(Engineer)
-     .then((userInput) => {
+function runMenu() {
+    return inquirer.prompt(menu)
+     .then((input) => {console.log(input)
+        if(input.employee === 'Engineer') {
+            engineer();
+        }
+          else if(input.employee === 'Intern') {
+                intern();
+        } 
+          else{console.log(JSON.stringify(team))
+            return team //console.log("Team Profile Generated!")
+          }
+
+     }); 
+}
+
+function engineer() {
+    return inquirer.prompt(engineerInfo)
+     .then((input) => {
         const engineer = new Engineer(input.name, input.idNum, input.email, input.github);
         team.push(engineer);
-         console.log(input); 
+         console.log(input)
+         runMenu()
      });
+}
 
-     return inquirer.prompt(Intern)
-     .then((userInput) => {
+function intern() {
+    return inquirer.prompt(internInfo)
+     .then((input) => {
         const intern = new Intern(input.name, input.idNum, input.email, input.school);
         team.push(intern);
-         console.log(input); 
+         console.log(input)
+         runMenu()
      });
- }
- // Function call to initialize app
- init();
+}
+
+ // call Manager Function to initialize app
+manager();
+
+ 
+function writeToFile(team) {
+    //return fs.writeFile(path.join(process.cwd().fileName))
+        fs.writeFile("./dist./team.html" ,(team),(err)=>{
+           err ?console.log(err) : console.log('html Completed!')
+    })
+    }
+        
