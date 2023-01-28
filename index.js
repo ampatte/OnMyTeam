@@ -5,9 +5,8 @@ const Intern = require('./lib/Intern')
 const Engineer = require('./lib/Engineer')
 const Manager = require('./lib/Manager');
 const generateHTML = require('./src/generateHTML');
-//const path = require("path");
-//const outputDir = path.resolve(dirname, "dist");
-//const outputPath = path.join(outputDir, "team.html"); 
+const outputDir = path.resolve(__dirname, "dist");
+const outputPath = path.join(outputDir, "team.html"); 
 const team =[];
 
 
@@ -30,7 +29,7 @@ const managerInfo = [
       },
       {
         type: 'input',
-        name: 'phone',
+        name: 'office',
         message: 'What is the office number?',
       }, 
     ]
@@ -96,8 +95,6 @@ const menu = [
         },
     ]
 
-
-
 function manager() {
     return inquirer.prompt(managerInfo)
      .then((input) => {
@@ -117,8 +114,9 @@ function runMenu() {
           else if(input.employee === 'Intern') {
                 intern();
         } 
-          else{console.log(JSON.stringify(team))
-            return team //console.log("Team Profile Generated!")
+          else{
+           buildTeam()
+            //console.log("Team Profile Generated!")
           }
 
      }); 
@@ -148,10 +146,11 @@ function intern() {
 manager();
 
  
-function writeToFile(team) {
-    //return fs.writeFile(path.join(process.cwd().fileName))
-        fs.writeFile("./dist./team.html" ,(team),(err)=>{
-           err ?console.log(err) : console.log('html Completed!')
+function buildTeam(){
+  console.log("buildTeam")
+    
+        fs.writeFile(outputPath ,generateHTML(team),(err)=>{
+           err ?console.log(err) : console.log("Team Profile Generated!")
     })
     }
         
