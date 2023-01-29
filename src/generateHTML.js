@@ -66,11 +66,10 @@ function generateHTML(team) {
         <title>OnMyTeam</title>
     </head>
     <body>
-    <body>
         <header class=" top pb-5 mb-4" class="header">
             <h1>Team Profile Generator<h1>
                 </header> 
-            <div class="container-fluid " class="row align-items-center">   
+            <div class="container-fluid" class="row align-items-center">   
         <div id="employees">
                 ${teamHTML.join("")}
             </div>
