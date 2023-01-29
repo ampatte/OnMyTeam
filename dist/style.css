@@ -1,22 +1,44 @@
-.card {
+header{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 700;
+    font-size: x-large;
+    color: white;
+    width: 100%;
+    display: inline-block;
+    background-color: red;
+    text-align: center;
+    padding:10%;
+}
+
+.card-header{
+    color: white;
+    background-color: rgb(65, 161, 245);
+    text-align: center;
+}
+
+.card-body{
+    background:rgb(234, 234, 234)
+}
+
+.card {
+
     display: inline-block;
     border-style: solid;
     border-radius: 1em;
     border-width: 2px;
     box-shadow: 5em;
     padding: 10px;
-    margin: 5px;
-    width: 20vw;
-    background:transparent;
+    margin: 1rem;
+    min-width: 15vw;
+   
+    background:blu;
 };
 
 #employees{
     position:absolute;
-    display: contents-center;
-    
+    display: center;
     border-width: 4em;
-    padding: 5px;
+    padding: 520px;
     margin: 10px;
     margin-left: 15%;
     }
