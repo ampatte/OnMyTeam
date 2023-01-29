@@ -5,45 +5,48 @@ function generateHTML(team) {
 
   const managers = team.filter((employee)=>employee.getRole() === "Manager")
   .map((manager)=> 
-  `<div class="col card text-bg-primary mb-3">
-        <div class="card-body">
-            <h1 class="display-4">${manager.getRole()}</h1>
-                <div class="card-header">${manager.name}</div>
+  `<div class="col card primary">        
+        <div class="card-header"><h2>${manager.getRole()}</h2></div>
+            <div class="card-body">
+                <h2 class="display-4">${manager.name}</h2>
                     <ul class="list-group-flush">
-                    <li class="list-group-item">ID badge # ${manager.idNum}</li>
-                <li class="list-group-item">Email: ${manager.email}</li>
-            <li class="list-group-item">Office phone: ${manager.office}</li>
-        </ul>
+                        <li class="list-group-item">ID Badge # ${manager.id}</li>
+                    <a href="">${manager.email}</a>
+                <li class="list-group-item">Office Phone: ${manager.office}</li>
+            </ul>
+        </div>
     </div>`)
     teamHTML.push(managers)
     console.log(managers)
 
   const engineers = team.filter((employee)=>employee.getRole() === "Engineer")
   .map((engineer)=> 
-  `<div class="col card text-bg-warning mb-3">
-        <div class="card-body">
-            <h1 class="display-4">${engineer.getRole()}</h1>
-                <div class="card-header"> ${engineer.name}</div>
+  `<div class="col card warning">
+        <div class="card-header"><h2> ${engineer.getRole()}</h2></div>
+            <div class="card-body">
+                <h1 class="display-4">${engineer.name}</h1>
                     <ul class="list-group-flush">
-                    <li class="list-group-item">ID badge # ${engineer.idNum}</li>
-                <a href="#" class="card-link> ${engineer.email}</a>
-            <li class="list-group-item">github username: ${engineer.github}</li>
-        </ul>
+                        <li class="list-group-item">ID Badge # ${engineer.id}</li>
+                    <a href="${engineer.email}">${engineer.email}</a>
+                <li class="list-group-item">Github Username: ${engineer.github}</li>
+            </ul>
+        </div>
     </div>`)
     teamHTML.push(engineers)
     console.log(engineers)
 
   const interns = team.filter((employee)=>employee.getRole() === "Intern")
   .map((intern)=> 
-  `<div class="col>
-        <div class="card-body">
-            <h1 class="display-4">${intern.getRole()}</h1>
-                <div class="card-header">${intern.name}</div>
+  `<div class="col card info">
+        <div class="card-header"><h2>${intern.getRole()}</h2></div>
+            <div class="card-body">
+                <h1 class="display-4">${intern.name}</h1>
                     <ul class="list-group-flush">
-                    <li class="list-group-item">ID badge # ${intern.idNum}</li>
-                <a href="#" class="card-link">${intern.email}</a>
-            <li class="list-group-item">School: ${intern.school}</li>
-        </ul>
+                        <li class="list-group-item">ID badge # ${intern.id}</li>
+                    <a href="${intern.email}">${intern.email}</a>
+                <li class="list-group-item">School: ${intern.school}</li>
+            </ul>
+        </div>
     </div>`)
     teamHTML.push(interns)
     console.log(interns)
@@ -65,10 +68,9 @@ function generateHTML(team) {
                 <h3><strong>Team Profile Generator</strong><h3>
             </nav> 
         </header> 
-        <div class="container-fluid"> 
-            <div class="row align-items-center" id="employees">       
-                ${teamHTML.join("")}
-            </div>
+        <div class="container-fluid" class="row align-items-center">   
+            <div id="employees"></div>
+             ${teamHTML.join("")}
         </div>
     </body>
     </html>`

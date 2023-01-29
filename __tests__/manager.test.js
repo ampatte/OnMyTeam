@@ -1,7 +1,4 @@
 const Manager = require('../lib/Manager');
-const Employee = require('../lib/Employee');
-
-
 
 test("it should instantiate the class of Manager", () => {
     const testExample = "Manager";
@@ -12,7 +9,7 @@ test("it should instantiate the class of Manager", () => {
 test("it should return office number property", () => {
     const testExample = 222;
     const man = new Manager("Steve", 5745, "stevie@test.com", testExample, "Manager");
-    expect(man.officeNum).toBe(testExample);
+    expect(man.office).toBe(testExample);
 })
 
 test("getOffice() should return office number", () => {

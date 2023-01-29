@@ -1,5 +1,4 @@
 const Intern = require('../lib/Intern')
-const Employee = require('../lib/Employee')
 
 test("it should instantiate the class of Intern", () => {
     const testExample = "Intern";

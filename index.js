@@ -19,7 +19,7 @@ const managerInfo = [
       },
       {
         type: 'input',
-        name: 'idNum',
+        name: 'id',
         message: 'What is the manager ID number?',
       },
       {
@@ -43,7 +43,7 @@ const engineerInfo = [
       },
       {
         type: 'input',
-        name: 'idNum', 
+        name: 'id', 
         message: 'What is the engineer ID number?',
                
       },
@@ -70,7 +70,7 @@ const internInfo = [
      },
      {
        type: 'input',
-       name: 'idNum',
+       name: 'id',
        message: 'What is the intern ID number?',
        
      },
@@ -98,7 +98,7 @@ const menu = [
 function manager() {
     return inquirer.prompt(managerInfo)
      .then((input) => {
-        const manager = new Manager(input.name, input.idNum, input.email, input.office);
+        const manager = new Manager(input.name, input.id, input.email, input.office);
         team.push(manager);
          console.log(input) 
          runMenu();
@@ -125,7 +125,7 @@ function runMenu() {
 function engineer() {
     return inquirer.prompt(engineerInfo)
      .then((input) => {
-        const engineer = new Engineer(input.name, input.idNum, input.email, input.github);
+        const engineer = new Engineer(input.name, input.id, input.email, input.github);
         team.push(engineer);
          console.log(input)
          runMenu()
@@ -135,7 +135,7 @@ function engineer() {
 function intern() {
     return inquirer.prompt(internInfo)
      .then((input) => {
-        const intern = new Intern(input.name, input.idNum, input.email, input.school);
+        const intern = new Intern(input.name, input.id, input.email, input.school);
         team.push(intern);
          console.log(input)
          runMenu()

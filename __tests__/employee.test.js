@@ -26,8 +26,8 @@ test("getName() should return employee name", () => {
 
 test("getId() should return employee id", () => {
     const testExample = 5745;
-    const id = new Employee("Steve", testExample, "stevie@test.com", "Employee")
-    expect(id.getId()).toBe(testExample);
+    const emp = new Employee("Steve", testExample, "stevie@test.com", "Employee")
+    expect(emp.getId()).toBe(testExample);
 })
 
 test("getEmail() should return employee email", () => {
