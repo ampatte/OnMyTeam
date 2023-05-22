@@ -2,9 +2,9 @@
 
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-https://github.com/ampatte/OnMyTeam
+  [GitHub Repo](https://github.com/ampatte/OnMyTeam)
 
-https://watch.screencastify.com/v/SWSUfCTzKQB19dqHJ2Eq
+  [Walkthrough Video](https://watch.screencastify.com/v/SWSUfCTzKQB19dqHJ2Eq)
   ## Description
   This project was an assignment to create a team profile generator.
 
@@ -39,7 +39,7 @@ https://watch.screencastify.com/v/SWSUfCTzKQB19dqHJ2Eq
   To run this program you would open a terminal, and install Nodejs. You would also have to require inquirer, the file system and path for this program to run.
 
   ## Usage
-  This project was an assignment but it is useful in keepign track of team members. I could be used to hold contact info or keep a list of responsibilities and tasks all in one place.
+  This project was an assignment but it is useful in keeping track of team members. I could be used to hold contact info or keep a list of responsibilities and tasks all in one place.
   ![alt text](Assets/code.png)
   ![alt text](Assets/OnMyTeam.png)
   
@@ -50,8 +50,8 @@ https://watch.screencastify.com/v/SWSUfCTzKQB19dqHJ2Eq
   After navigating to the correct folder, entering "npm run test" will run the unit tests to check the code. Entering "npm start" will run the whole program. 
 
   ## Questions?
-  - Github link: https://github.com/ampatte
-  - Email link: ampatte717@gmail.com
+  - [Github link]( https://github.com/ampatte)
+  - [Email link](ampatte717@gmail.com)
 
   ## License
     This project is covered under the MIT license.(https://choosealicense.com/licenses/mit/)
