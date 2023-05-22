@@ -6,7 +6,7 @@
 
   [Walkthrough Video](https://watch.screencastify.com/v/SWSUfCTzKQB19dqHJ2Eq)
   ## Description
-  This project was an assignment to create a team profile generator.
+  This project is a Node.js command-line application that takes in information about employees on a team and generates an HTML webpage that displays summaries for each team member.
 
   ## Acceptance Criteria
 * GIVEN a command-line application that accepts user input
