@@ -39,7 +39,7 @@
   To run this program you would open a terminal, and install Nodejs. You would also have to require inquirer, the file system and path for this program to run.
 
   ## Usage
-  This project was an assignment but it is useful in keeping track of team members. I could be used to hold contact info or keep a list of responsibilities and tasks all in one place.
+  This project was an assignment but it is useful in keeping track of team members. It could be used to hold contact info or keep a list of responsibilities and tasks all in one place.
   ![alt text](Assets/code.png)
   ![alt text](Assets/OnMyTeam.png)
   
